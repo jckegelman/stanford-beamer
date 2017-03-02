@@ -6,31 +6,35 @@
 
 % #########################################
 
-\documentclass{beamer}
+\documentclass[12pt]{beamer}
 \usepackage{textpos}
 \usepackage{graphicx}
 
 \newcommand{\bT}{\mathbf{T}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cS}{\mathcal{S}}
-\newcommand{\vsmall}{\vskip 5px} 
-\newcommand{\vmedium}{\vskip 10px} 
-\newcommand{\vbig}{\vskip 20px} 
+\newcommand{\vsmall}{\vskip 5px}
+\newcommand{\vmedium}{\vskip 10px}
+\newcommand{\vbig}{\vskip 20px}
 \newcommand{\bA}{\mathbf{A}}
 
 \usetheme{stanford}
-\author[bill.beta@stanford.edu]{ John Arc, \textbf{ Bill Beta } and Sophie Gamma\\
-The Group }
-\title[What is it all about?]{What is it all about?}
-\begin{document} 
 
-\setbeamercolor{itemize item}{fg=red}
-\frame{\titlepage}
+\author{The Tree}
+\title{Template}
+\institute[Stanford University]{Stanford University}
 
-\begin{frame}[fragile]{Model}
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage%
+\end{frame}
+\addtocounter{framenumber}{-1}
+
+\begin{frame}{Model}
   \[
   0 = 1 + e^{-\pi i}
   \]
 \end{frame}
 
-\end{document} 
+\end{document}
