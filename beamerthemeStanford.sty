@@ -1,0 +1,111 @@
+%
+% beamerthemeStanford.sty
+%
+% Created by Zhiming Wang on August 26, 2014.
+%
+% This theme is inspired by the CambridgeUS theme packaged with the
+% Beamer LaTeX package. The major colors are taken from Stanford's
+% official palettes: https://identity.stanford.edu/overview/color.
+%
+% This work is dedicated by the author to the public domain.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+% EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+% NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+% BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+% ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+% CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%
+
+% colors
+\definecolor{cardinal}{HTML}{8C1515}
+\definecolor{sandstone}{HTML}{D2C295}
+\definecolor{westar}{HTML}{DAD7CB}
+
+% base, courtesy of beamerthemeCambridgeUS.sty
+\mode<presentation>
+\useinnertheme[shadow=false]{rounded}
+\setbeamerfont{block title}{size={}}
+% custom colors
+\usecolortheme{beaver}
+\setbeamercolor{frametitle}{fg=cardinal,bg=white}
+\setbeamercolor{local structure}{fg=black}
+\setbeamercolor{palette primary}{fg=cardinal,bg=sandstone}
+\setbeamercolor{palette secondary}{fg=cardinal,bg=westar}
+\setbeamercolor{palette tertiary}{fg=white,bg=cardinal}
+\setbeamercolor{titlelike}{fg=cardinal,bg=sandstone!20}
+\setbeamercolor{sidebar}{bg=cardinal}
+\setbeamercolor{footline}{fg=cardinal,bg=white}
+% kill certain unprofessional elements
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}{}
+\setbeamertemplate{section in toc}%
+{\inserttocsectionnumber.~\inserttocsection}
+\setbeamertemplate{subsection in toc}%
+{\hspace{1em}$\bullet$~\inserttocsubsection\par}
+\setbeamertemplate{itemize items}{$\bullet$}
+
+% add empty sidebar theme
+\setbeamertemplate{sidebar}[default]
+\setbeamersize{sidebar width left=.05\paperwidth}
+
+% set left sidebar template
+\makeatletter
+\setbeamertemplate{sidebar left}{%
+  \vfill
+  \hbox to \beamer@leftsidebar{\hfil
+  \usebeamerfont{title in sidebar}
+  \usebeamercolor[fg]{title in sidebar}
+  \insertframenumber%
+  \hfil}
+  \vskip2ex%
+}
+\makeatother
+
+% set footline template
+\setbeamertemplate{footline}{%
+  \hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=0ex,dp=0ex,right,rightskip=2ex]{frame number}
+    \hfil
+    \footnotesize\usebeamercolor[fg]{footline}
+    \insertshortinstitute%
+    \vskip2ex
+  \end{beamercolorbox}
+  }
+}
+
+% plain and definition theorem styles in sandstone
+\makeatletter
+\def\th@plain{
+  \normalfont
+  \setbeamercolor{block title example}{bg=sandstone,fg=white}
+  \setbeamercolor{block body example}{bg=sandstone!20,fg=black}
+  \def\inserttheoremblockenv{exampleblock}
+}
+\theoremstyle{plain}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+
+\def\th@definition{
+  \normalfont
+  \setbeamercolor{block title example}{bg=sandstone,fg=white}
+  \setbeamercolor{block body example}{bg=sandstone!20,fg=black}
+  \def\inserttheoremblockenv{exampleblock}
+}
+\theoremstyle{definition}
+
+% highlight theorem style in cardinal
+\def\th@highlight{
+  \normalfont
+  \setbeamercolor{block title example}{bg=cardinal,fg=white}
+  \setbeamercolor{block body example}{bg=cardinal!20,fg=black}
+  \def\inserttheoremblockenv{exampleblock}
+}
+\makeatother
+\theoremstyle{highlight}
+\newtheorem{hconjecture}{Conjecture}
+\newtheorem{hcorollary}{Corollary}
+\newtheorem{htheorem}{Theorem}
+\newtheorem{question}{Question}
+\newtheorem{answer}{Answer}
